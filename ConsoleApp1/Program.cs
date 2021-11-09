@@ -9,7 +9,7 @@ namespace ConsoleApp1
         {
             ArrayList arrayList = new ArrayList();
 
-            arrayList.Add(1);
+            arrayList.AddElementToTheBeginning(2);
            
 
             arrayList.WriteToConsole();
