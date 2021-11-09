@@ -6,7 +6,7 @@ namespace Lists
     {
         public int Length {get; private set;}
 
-        private const int _minArrayLenght = 10;
+        private const int _minArrayLength = 10;
 
         private int[] _array;
 
@@ -14,7 +14,7 @@ namespace Lists
         {
 
             Length = 0;
-            _array = new int[_minArrayLenght];
+            _array = new int[_minArrayLength];
         }
         
         public void Add(int value)
@@ -47,18 +47,22 @@ namespace Lists
             _array = tmpArray;
         }
 
-        public void Add(int value)
+
+        public void AddElementToTheBeginning(int value)
         {
-            value = _array[0];
+            if (Length==_array.Length)
+            {
+                UpArraySize();
+            }
+            Shift(0, Length, 1);
+            _array[0] = value;
+        }
+        static void Shift(int a, int b, int c)
+        {
+            
         }
 
-            private void MoveElementsForward()
-        {
-            Length++;
-            for (int i = 0; i < Length; i++)
-            {
-                tmpArray[i] = _array[i + 1];
-            }
+            
             
         }
     }
