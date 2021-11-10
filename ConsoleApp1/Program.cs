@@ -7,12 +7,21 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            ArrayList arrayList = new ArrayList();
+            ArrayList MyList = new ArrayList();
+            MyList.AddElement(5); 
+            MyList.AddElement(7);
+            MyList.AddElement(8);
+            MyList.WriteToConsole();
 
-            arrayList.AddElementToTheBeginning(2);
+
+            MyList.AddFirst(2);
+            MyList.WriteToConsole();
+
+            MyList.AddElement(4, 4);
+            MyList.WriteToConsole();
            
 
-            arrayList.WriteToConsole();
+
         }
     }
 }
