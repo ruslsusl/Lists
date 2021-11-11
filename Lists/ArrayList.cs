@@ -95,7 +95,34 @@ namespace Lists
             Shift(index, Length);
             _array[index] = value;
         }
+        
+        private void ReduceArrayList()
+        {
+            if ((int)(Length * 0.7) > _minArrayLength && Length <= (_array.Length / 2))
+            {
+                int[] tmpArray = new int[(int)(Length * 0.7)];
 
+                for (int i = 0; i < _array.Length; i++)
+                {
+                    tmpArray[i] = _array[i];
+                }
+                _array = tmpArray;
+            }
+
+        }
+        public void DeleteLast()
+        {
+            Length--;
+            ReduceArrayList();
+        }
+        public void DeleteFirst()
+        {
+            if (Length > 0)
+            {
+                Shift(0, Length);
+                ReduceArrayList();
+            }
+        }
 
         #region // штука для теста
         public override bool Equals(object obj)
