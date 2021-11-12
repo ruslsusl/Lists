@@ -19,7 +19,15 @@ namespace ConsoleApp1
 
             MyList.AddElement(4, 4);
             MyList.WriteToConsole();
-           
+
+            MyList.DeleteFirst();
+            MyList.WriteToConsole();
+
+            MyList.DeleteSeveralElements(1, 3);
+            MyList.WriteToConsole();
+
+
+
 
 
         }
