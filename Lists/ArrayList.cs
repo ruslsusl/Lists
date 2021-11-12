@@ -86,6 +86,15 @@ namespace Lists
                 end--;
             }
         }
+        public void ReversedShift(int start, int end)
+        {
+            Length--;
+            while (end > start)
+            {
+                _array[start] = _array[start+1];
+                start++;
+            }
+        }
         public void AddElement(int index, int value)
         {
             if (Length == _array.Length)
@@ -112,15 +121,38 @@ namespace Lists
         }
         public void DeleteLast()
         {
-            Length--;
-            ReduceArrayList();
+            if (Length > 0)
+            {
+                Length--;
+                ReduceArrayList();
+            }
+            
         }
-        public void DeleteFirst()
+        public void DeleteFirst() //Test???
         {
             if (Length > 0)
             {
-                Shift(0, Length);
+                
+                ReversedShift(0, Length);
                 ReduceArrayList();
+                
+            }
+        }
+        public void DeleteElement(int index)
+        {
+            if (Length > 0)
+            {
+
+                ReversedShift(index, Length);
+
+            }
+        }
+        public void DeleteSeveralElements(int index, int s)
+        {
+            if (Length > 0)
+            {
+                for( int i=index; i<index+s; i++)
+                ReversedShift(i, Length);
             }
         }
 
